@@ -7,6 +7,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xml:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>TODO supply a title</title>
@@ -18,9 +19,15 @@ and open the template in the editor.
             #{helloController.springHello()}   
         </div>
         <br> </br>
-            <div>
-                Managed bean Faces :
-                #{helloController.showHello()}
-            </div>
+        <div>
+            Managed bean Faces :
+            #{helloController.showHello()}
+        </div>
+        <br> </br>
+        <p:dataTable value="#{studentListController.students}" var="student">
+            <p:column headerText="ID">#{student.id}</p:column>
+            <p:column headerText="First Name">#{student.firstName}</p:column>
+            <p:column headerText="School">#{student.school}</p:column>
+        </p:dataTable>
     </h:body>
 </html>
