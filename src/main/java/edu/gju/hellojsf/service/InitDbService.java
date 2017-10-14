@@ -29,6 +29,10 @@ public class InitDbService {
         s1.setFirstName("Hesham");
         s1.setSchool("EEIT");
         studentRepository.save(s1);
+        Student s2 = new Student();
+        s2.setFirstName("test");
+        s2.setSchool("SAMS");
+        studentRepository.save(s2);
         System.out.println("Init method finished!\n");
 
     }
