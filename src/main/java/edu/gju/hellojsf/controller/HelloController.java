@@ -1,4 +1,4 @@
-package edu.gju.test.hellojsf.controller;
+package edu.gju.hellojsf.controller;
 
 import edu.gju.hellojsf.service.SpringService;
 import javax.faces.bean.ManagedBean;
