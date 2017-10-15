@@ -33,4 +33,8 @@ public class StudentsService {
         this.studentReposiory = studentReposiory;
     }
 
+    public void save(Student student) {
+        studentReposiory.save(student);
+    }
+
 }

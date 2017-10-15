@@ -25,9 +25,24 @@ public class StudentListController {
 
     private List<Student> students;
 
+    // Object to bind to form component data
+    private Student studentObject = new Student();
+
     @PostConstruct
     public void loadStudents() {
         students = studentService.findAll();
+    }
+
+    public void save() {
+        studentService.save(this.studentObject);
+    }
+
+    public Student getStudentObject() {
+        return studentObject;
+    }
+
+    public void setStudentObject(Student studentObject) {
+        this.studentObject = studentObject;
     }
 
     public StudentsService getStudentService() {

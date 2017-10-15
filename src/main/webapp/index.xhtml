@@ -29,5 +29,15 @@ and open the template in the editor.
             <p:column headerText="First Name">#{student.firstName}</p:column>
             <p:column headerText="School">#{student.school}</p:column>
         </p:dataTable>
+        <br/>
+        <h:form>
+            <p:panelGrid columns="2">
+                name:
+                <p:inputText value="#{studentListController.studentObject.firstName}" />
+                School:
+                <p:inputText value="#{studentListController.studentObject.school}" />
+            </p:panelGrid>
+            <p:commandButton value="save" action="#{studentListController.save()}" />
+        </h:form>
     </h:body>
 </html>
