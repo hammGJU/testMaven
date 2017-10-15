@@ -10,7 +10,7 @@ and open the template in the editor.
       xmlns:p="http://primefaces.org/ui"
       xml:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>TODO supply a title</title>
+        <title>Test App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
@@ -23,29 +23,32 @@ and open the template in the editor.
             Managed bean Faces :
             #{helloController.showHello()}
         </div>
-        <br> </br>
-        <p:dataTable value="#{studentListController.students}" var="student">
+        <br/>
+        <div>
+            <p:growl id="msgs"/>
+        </div>
+        <p:dataTable value="#{studentListController.students}" var="student" id="studentTable">
             <p:column headerText="ID">#{student.id}</p:column>
             <p:column headerText="First Name">#{student.firstName}</p:column>
             <p:column headerText="School">#{student.school}</p:column>
         </p:dataTable>
         <br/>
-        <h:form>
+        <h:form id="studentForm">
             <p:panelGrid columns="2">
                 name:
                 <p:inputText value="#{studentListController.studentObject.firstName}" />
                 School:
                 <p:inputText value="#{studentListController.studentObject.school}" />
             </p:panelGrid>
-            <p:commandButton value="save" action="#{studentListController.save()}" />
+            <p:commandButton value="save" action="#{studentListController.save()}" update="studentForm, :studentTable, :msgs" />
         </h:form>
         <br />
-        <h:form>
+        <h:form id="removeForm">
             <p:panelGrid columns="2">
                 ID:
                 <p:inputText value="#{studentListController.studentObject.id}" />
             </p:panelGrid>
-            <p:commandButton value="Delete" action="#{studentListController.remove()}" />
+            <p:commandButton value="Delete" action="#{studentListController.remove()}" update="removeForm, :studentTable, :msgs" />
         </h:form>
     </h:body>
 </html>
