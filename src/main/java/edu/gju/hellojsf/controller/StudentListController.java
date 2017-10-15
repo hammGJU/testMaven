@@ -37,6 +37,10 @@ public class StudentListController {
         studentService.save(this.studentObject);
     }
 
+    public void remove() {
+        studentService.remove(this.studentObject.getId());
+    }
+
     public Student getStudentObject() {
         return studentObject;
     }

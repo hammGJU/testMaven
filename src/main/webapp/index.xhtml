@@ -39,5 +39,13 @@ and open the template in the editor.
             </p:panelGrid>
             <p:commandButton value="save" action="#{studentListController.save()}" />
         </h:form>
+        <br />
+        <h:form>
+            <p:panelGrid columns="2">
+                ID:
+                <p:inputText value="#{studentListController.studentObject.id}" />
+            </p:panelGrid>
+            <p:commandButton value="Delete" action="#{studentListController.remove()}" />
+        </h:form>
     </h:body>
 </html>

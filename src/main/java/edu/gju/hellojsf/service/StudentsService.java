@@ -37,4 +37,8 @@ public class StudentsService {
         studentReposiory.save(student);
     }
 
+    public void remove(Long id) {
+        studentReposiory.delete(id);
+    }
+
 }
